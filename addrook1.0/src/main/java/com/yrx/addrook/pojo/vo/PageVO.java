@@ -1,5 +1,7 @@
 package com.yrx.addrook.pojo.vo;
 
+import cn.hutool.core.util.StrUtil;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -27,6 +29,20 @@ public class PageVO<E> implements Serializable {
 		this.list = list;
 		this.totalPage = totalPage;
 		this.totalSize = totalSize;
+	}
+
+	public PageVO(String pageNum, String pageSize) {
+		if(StrUtil.isNumeric(pageNum) && Integer.parseInt(pageNum)>0){
+			this.pageNum = Integer.parseInt(pageNum);
+		}else{
+			this.pageNum = 1;
+		}
+
+		if(StrUtil.isNumeric(pageSize) && Integer.parseInt(pageSize)>0){
+			this.pageSize = Integer.parseInt(pageSize);
+		}else{
+			this.pageSize = 10;
+		}
 	}
 
 	public Integer getPageNum() {
