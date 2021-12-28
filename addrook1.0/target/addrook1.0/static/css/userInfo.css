@@ -1,0 +1,12 @@
+body{
+    background:url("../img/bg.jpg") ;
+}
+
+#title{
+    font-size: 38px;
+    color:#666666;
+}
+table{
+    text-align: center;
+
+}
